@@ -13,5 +13,5 @@ Important Terms:
    
 ## Turtle Sim
 After running the command `roscore`, run the command:
-$$`rosrun turtlesim turtlesim_node`$$
+$$`rosrun turtlesim turtlesim_node`
    
