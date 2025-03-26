@@ -7,9 +7,13 @@ Important Terms:
  * Messages: ROS data type used when subscribing or publishing a topic
  * Topics: Nodes can _publish_ messages to a topic as well as _subscribe_ to a topic to receive messages
  * Master: Name service for ROS (i.e. helps nodes find each other)
- * `Roscore`: Master + rosout + parameter server
-     * Note: Need to figure out more about this term
+ * Roscore: Master + rosout + parameter server
      * First thing you should run when using ROS
+
+May also need to source the environment setup file for our workspace. Example given below
+`cd ~/catkin_ws/
+ source devel/setup.bash
+ roscd beginner_tutorials`
    
 ## Turtle Sim
 After running the command `roscore`, in a new terminal, run the command: `rosrun turtlesim turtlesim_node`
@@ -18,7 +22,8 @@ If we want a behavior diagram of how our turtle simulation is interacting betwee
    
 ### Publishing Data
 `rostopic pub [topic] [msg_type] [args]` publishes data onto a topic currently being run.
- * Example: Use the command `rostopic pub /turtle/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'`
+ * Example: Use the command:
+   `rostopic pub /turtle/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'`
      * This publishes the velocity commands at a rate of 1 HZ on the velocity topic
      * Note: The `--` is used to tell the option parser that none of the following arguments is an option. This is required in cases where our arguments may be negative.
 
@@ -33,5 +38,26 @@ Services are another way that nodes can communicate with one another.
      * `rosparam dump [file_name] [namespace]`
      * `rosparam load [file_name] [namespace]`
 
+## RQT Console and RosLaunch
+`rqt_console` and `rqt_logger_level` are useful for debugging; whereas, `roslaunch` is useful tool for starting many nodes at once.
+ * RQT Console is used to help display output from nodes.
+     * Run the console with `rosrun rqt_console rqt_console`
+ * RQT Logger Levels allow us to change the verbosity level (DEBUG, WARN, INFO, and ERROR) of nodes as they run.
+     * Run the logger level with `rosrun rqt_logger_level rqt_logger_level`
+     * Logging levels are priortized in this order: Fatal, Error, Warn, Info, Debug
+     * When we set the logger level, we get all messages of that priority level **or** higher
 
- 
+Roslaunch starts nodes as defined in a launch file
+ * `roslaunch [package] [filename.launch]
+
+Creating a launch file:
+ 1. Source the environment (If Needed)
+ 2. `roscd [package_name]`
+ 3. Make a launch directory and go to it
+      * `mkdir launch`
+      * `cd launch`
+ 4. Now make a launch file
+      * `touch [file_name].launch`
+
+Using turtle sim as an example, if we want to launch two nodes of turtle sim at once: 
+
