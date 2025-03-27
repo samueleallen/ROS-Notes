@@ -58,6 +58,24 @@ Creating a launch file:
       * `cd launch`
  4. Now make a launch file
       * `touch [file_name].launch`
+ 5. Edit launch file as wanted
 
-Using turtle sim as an example, if we want to launch two nodes of turtle sim at once: 
-`
+## Using Rosed (ROS Edit)
+Allows you to directly edit a file within a package by using package name rather than annoyingly typing the entire path to the package.
+`rosed [package_name] [filename]`
+
+Auto completing with hitting tab twice can let us easily see and optionally edit all files from a package without knowing its exact name.
+`rosed [package_name] <tab><tab>
+
+Default Editor for rosed is vim. We can change this to nano editor (auto-installed with ubuntu) with the commands:
+`export EDITOR='nano -w'`
+
+## Creating ROS msg and srv
+ * msg: a msg file is a simple text file that describes the fields of a ROS message. Used to generate source code for messages in different languages.
+     * Stored in msg directoy of a package
+     * In a msg file, you specify each line with a field type and field name. Field types include int8, int16, ... , string, time, float, etc. 
+ * srv: an srv file describes a service.
+     * Composed of two parts: a request and a response
+     * Stored in srv directory of a package
+     * Just like a masg file except they contain two parts, a request and a response separated by a '---'
+
