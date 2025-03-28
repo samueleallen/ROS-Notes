@@ -11,9 +11,9 @@ Important Terms:
      * First thing you should run when using ROS
 
 May also need to source the environment setup file for our workspace. Example given below
-`cd ~/catkin_ws/`
- `source devel/setup.bash`
- `roscd beginner_tutorials`
+`cd ~/catkin_ws/`  
+`source devel/setup.bash`  
+`roscd beginner_tutorials`  
    
 ## Turtle Sim
 After running the command `roscore`, in a new terminal, run the command: `rosrun turtlesim turtlesim_node`
