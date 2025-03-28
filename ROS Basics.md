@@ -10,7 +10,7 @@ Important Terms:
  * Roscore: Master + rosout + parameter server
      * First thing you should run when using ROS
 
-May also need to source the environment setup file for our workspace. Example given below
+May also need to source the environment setup file for our workspace. Example given below  
 `cd ~/catkin_ws/`  
 `source devel/setup.bash`  
 `roscd beginner_tutorials`  
