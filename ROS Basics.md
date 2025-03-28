@@ -11,9 +11,9 @@ Important Terms:
      * First thing you should run when using ROS
 
 May also need to source the environment setup file for our workspace. Example given below
-`cd ~/catkin_ws/
- source devel/setup.bash
- roscd beginner_tutorials`
+`cd ~/catkin_ws/`
+ `source devel/setup.bash`
+ `roscd beginner_tutorials`
    
 ## Turtle Sim
 After running the command `roscore`, in a new terminal, run the command: `rosrun turtlesim turtlesim_node`
@@ -80,4 +80,4 @@ Default Editor for rosed is vim. We can change this to nano editor (auto-install
      * Just like a masg file except they contain two parts, a request and a response separated by a '---'
 
 Creating a new srv definition by hand can be tedious, so we can sometimes just copy an existing one from another package with the command:
-`roscp [package_name] [file_to_copy_path] [copy_path]
+`roscp [package_name] [file_to_copy_path] [copy_path]`
