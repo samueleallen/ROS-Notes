@@ -79,3 +79,5 @@ Default Editor for rosed is vim. We can change this to nano editor (auto-install
      * Stored in srv directory of a package
      * Just like a masg file except they contain two parts, a request and a response separated by a '---'
 
+Creating a new srv definition by hand can be tedious, so we can sometimes just copy an existing one from another package with the command:
+`roscp [package_name] [file_to_copy_path] [copy_path]
